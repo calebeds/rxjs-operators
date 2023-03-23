@@ -2,21 +2,18 @@ import { add } from "./helpers";
 
 add.li("Line 3");
 
-const callback = (message) => {
-  add.li(message);
+const runPromise = async () => {
+  add.li("line 6");
+  const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("We are complete!");
+    }, 5000);
+  });
+  await p;
+
+  add.li("Line 14");
 };
 
-const greeting = (message, cb) => {
-  let start = Date.now();
-  for (let i = 0; i < 1000000000; i++) {
-    //do nothing
-  }
-  add.li(`took: ${Date.now() - start}ms`);
-  cb(message);
-};
+runPromise();
 
-greeting("Hello from line 18", callback);
-
-add.li("Line 20");
-
-add.li("Line 22");
+add.li("Line 19");
