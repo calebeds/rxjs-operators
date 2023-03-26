@@ -1,12 +1,12 @@
-import {add, sampleData} from "./helpers";
+import { add, sampleData } from "./helpers";
 
-import {pluck, switchMap} from "rxjs/operators";
+import { pluck, first, last, startWith, switchMap } from "rxjs/operators";
 
-sampleData
-.pipe(
-    pluck('company', 'name')
-)
-.subscribe(add.li);
+const me = {
+  name: "Calebe Dos Santos Oliveira",
+};
+
+sampleData.pipe(startWith(me), pluck("name")).subscribe(add.li);
 
 //https://jsonplaceholder.typicode.com/users
 
