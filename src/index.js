@@ -1,5 +1,5 @@
-import "./interval";
+import "./range";
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("title").innerHTML = "interval()";
+  document.getElementById("title").innerHTML = "range()";
 });
