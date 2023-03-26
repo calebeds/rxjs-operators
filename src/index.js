@@ -1,7 +1,5 @@
-import './observable'
+import "./from-of";
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    document.getElementById('title').innerHTML = "Observable";
-     
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("title").innerHTML = "From - Of";
 });
