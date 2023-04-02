@@ -1,6 +1,6 @@
 import { add } from "./helpers";
 import { interval, fromEvent } from "rxjs";
-import { concatAll, map, tap, take } from "rxjs/operators";
+import { mergeAll, map, tap, take } from "rxjs/operators";
 
 const button = document.getElementById("submit");
 const clicks = fromEvent(button, "click");
@@ -13,4 +13,4 @@ const source = clicks.pipe(
   )
 );
 
-source.pipe(concatAll()).subscribe(add.li);
+source.pipe(mergeAll()).subscribe(add.li);
