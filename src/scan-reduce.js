@@ -2,9 +2,9 @@ import { add } from "./helpers";
 import { interval, from } from "rxjs";
 import { scan, reduce, take, concatMap } from "rxjs/operators";
 
-const FS = interval(1000).pipe(
-  take(10),
-  scan(
+const FS = interval(100).pipe(
+  take(20),
+  reduce(
     (acc, value) => {
       const n = value + 1;
       const last = acc[n];
@@ -15,4 +15,4 @@ const FS = interval(1000).pipe(
   )
 );
 
-FS.subscribe(add.li);
+FS.pipe(concatMap((sequence) => from(sequence))).subscribe(add.li);
