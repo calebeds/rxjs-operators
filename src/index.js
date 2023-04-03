@@ -1,7 +1,5 @@
-import './http'
+import "./errors";
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    document.getElementById('title').innerHTML = "HTTP";
-     
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("title").innerHTML = "Errors";
 });
