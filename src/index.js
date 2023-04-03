@@ -1,7 +1,5 @@
-import './audio_project'
+import "./subjects-intro";
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    document.getElementById('title').innerHTML = "Subjects";
-     
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("title").innerHTML = "Subjects";
 });
